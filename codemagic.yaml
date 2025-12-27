@@ -1,29 +1,46 @@
 workflows:
-  ios-project-debug: # workflow ID
-    name: iOS debug # workflow name
+  ios-project-debug:
+    name: iOS Debug Build
+
     environment:
       xcode: latest
       cocoapods: default
       vars:
-          XCODE_PROJECT: "RAWGRX.xcodeproj" # Isikan nama project Anda.
-          XCODE_SCHEME: "RAWGRX" # Isikan nama scheme project Anda.
+        XCODE_PROJECT: "RAWGRX.xcodeproj"
+        XCODE_SCHEME: "RAWGRX"
+
     scripts:
-      - name: Run tests
+      - name: Clean & Resolve Packages
         script: |
-          xcodebuild \
-          -project "$XCODE_PROJECT" \
-          -scheme "$XCODE_SCHEME" \
-          -sdk iphonesimulator \
-          -destination 'platform=iOS Simulator,name=iPhone 16,OS=26.0' \
-          clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
-      - name: Build debug app
+          xcodebuild clean \
+            -project "$XCODE_PROJECT" \
+            -scheme "$XCODE_SCHEME"
+
+      - name: Run Unit Tests (iOS Simulator)
         script: |
-          xcodebuild build -project "$XCODE_PROJECT" \
-          -scheme "$XCODE_SCHEME" \
-          CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          xcodebuild test \
+            -project "$XCODE_PROJECT" \
+            -scheme "$XCODE_SCHEME" \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=26.0' \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Build Debug App (Generic iOS)
+        script: |
+          xcodebuild build \
+            -project "$XCODE_PROJECT" \
+            -scheme "$XCODE_SCHEME" \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
     artifacts:
       - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+
     publishing:
       email:
         recipients:
-          - nsetyo19@gmail.com # Isikan email untuk notifikasi status building.
+          - nsetyo19@gmail.com
