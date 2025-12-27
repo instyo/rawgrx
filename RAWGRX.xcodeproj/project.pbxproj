@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		445D75592EFE74B800561B48 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 445D75582EFE74B800561B48 /* Kingfisher */; };
+		446755BB2F00059500C93883 /* Game in Frameworks */ = {isa = PBXBuildFile; productRef = 446755BA2F00059500C93883 /* Game */; };
 		4486356F2EFE212700EB9F86 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 4486356E2EFE212700EB9F86 /* Core */; };
 		448635722EFE214000EB9F86 /* Game in Frameworks */ = {isa = PBXBuildFile; productRef = 448635712EFE214000EB9F86 /* Game */; };
 		44E00B592EFFC57500C13FB3 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 44E00B582EFFC57500C13FB3 /* Core */; };
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				446755BB2F00059500C93883 /* Game in Frameworks */,
 				445D75592EFE74B800561B48 /* Kingfisher in Frameworks */,
 				44E00B592EFFC57500C13FB3 /* Core in Frameworks */,
 				448635722EFE214000EB9F86 /* Game in Frameworks */,
@@ -141,6 +143,7 @@
 				448635712EFE214000EB9F86 /* Game */,
 				445D75582EFE74B800561B48 /* Kingfisher */,
 				44E00B582EFFC57500C13FB3 /* Core */,
+				446755BA2F00059500C93883 /* Game */,
 			);
 			productName = RAWGRX;
 			productReference = 44E80F612EFE0E8A0080F4DB /* RAWGRX.app */;
@@ -177,7 +180,7 @@
 			packageReferences = (
 				445D75572EFE74B800561B48 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				44E00B572EFFC57500C13FB3 /* XCRemoteSwiftPackageReference "Core" */,
-				44D6F2A92EFFD6B200AF8DA6 /* XCRemoteSwiftPackageReference "Game" */,
+				446755B92F00059500C93883 /* XCLocalSwiftPackageReference "Module/Game" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 44E80F622EFE0E8A0080F4DB /* Products */;
@@ -502,6 +505,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		446755B92F00059500C93883 /* XCLocalSwiftPackageReference "Module/Game" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Module/Game;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		445D75572EFE74B800561B48 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -509,14 +519,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 8.6.2;
-			};
-		};
-		44D6F2A92EFFD6B200AF8DA6 /* XCRemoteSwiftPackageReference "Game" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/instyo/Game.git";
-			requirement = {
-				branch = main;
-				kind = branch;
 			};
 		};
 		44E00B572EFFC57500C13FB3 /* XCRemoteSwiftPackageReference "Core" */ = {
@@ -534,6 +536,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 445D75572EFE74B800561B48 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		446755BA2F00059500C93883 /* Game */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Game;
 		};
 		4486356E2EFE212700EB9F86 /* Core */ = {
 			isa = XCSwiftPackageProductDependency;

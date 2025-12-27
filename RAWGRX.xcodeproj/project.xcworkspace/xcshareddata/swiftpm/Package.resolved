@@ -1,5 +1,5 @@
 {
-  "originHash" : "cd007d8e8359db53f105c332a0c5f5a5efb9d9d8dfb5e91461b2dd24f9899f6b",
+  "originHash" : "0ab6a277779a762cc7557c7b401eda26d5814aa43be7e70838514ab244416415",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -17,15 +17,6 @@
       "state" : {
         "branch" : "main",
         "revision" : "144cb05fcaf445d144368012e638b637e7a77327"
-      }
-    },
-    {
-      "identity" : "game",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/instyo/Game.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "706b52cbd61b1d02f4e02b7ced2e72a667c1ecd0"
       }
     },
     {
